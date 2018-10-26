@@ -25,15 +25,25 @@
                                 <div class="card">
                                     <div class="card-header">Draft Surat</div>
                                     <div class="card-body">
-                                        <form  method="POST" action="<?php echo site_url("draft/add"); ?>">
+                                        <form  method="POST" action="<?php echo site_url("draft/edit/12345"); ?>">
+                                            <input type="hidden" name="id_surat_keluar" id="id_surat_keluar" value="<?php  echo $record["id_surat_keluar"]?>">
                                             <input type="hidden" name="inputBy" id="inputBy" value="<?php  echo $this->session->userdata("id_user")?>">
                                         <div class="card-title">
-                                            <h3 class="text-center title-2">Tambah Draft Surat</h3>
+                                            <h3 class="text-center title-2"> Tambah Draft Surat</h3>
                                         </div>
                                             <div class="form-group">
                                                 <label class="control-label mb-1">Isi Surat</label>
-                                                <textarea name="isi_surat" class="form-control editor" id="isi_surat"></textarea>
+                                                <textarea name="isi_surat" class="form-control editor" id="isi_surat"><?php echo $record["isi_surat"]; ?></textarea>
                                             </div>  
+                                            <?php if($this->session->userdata("jabatan")=="admin"){ ?>
+                                            <div class="form-group">
+                                                <label class="control-label mb-1">Status</label>
+                                                <select name="status" class="form-control">
+                                                    <option value="proses">Proses</option>
+                                                    <option value="selesai">Selesai</option>
+                                                </select>
+                                            </div>  
+                                            <?php } ?>
                                             <div class="row">
                                                 <div class="col-lg-10"></div>
                                                 <div class="col-lg-4">
@@ -49,4 +59,4 @@
                              
                     </div>
                 </div>
-<script type="text/javascript"> $( 'textarea.editor' ).ckeditor();</script>
+<script type="text/javascript">$( 'textarea.editor' ).ckeditor();</script>

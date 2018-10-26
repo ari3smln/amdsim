@@ -68,7 +68,7 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="<?php echo base_url(); ?>assets/CoolAdmin-master/vendor/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/ckeditor/jquery.js"></script>
     <!-- Bootstrap JS-->
     <script src="<?php echo base_url(); ?>assets/CoolAdmin-master/vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/CoolAdmin-master/vendor/bootstrap-4.1/bootstrap.min.js"></script>
