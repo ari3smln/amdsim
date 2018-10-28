@@ -32,10 +32,15 @@ class Model_draft extends ci_model
 	}
 		
 	function edit(){
+		if($this->input->post("status")!=""){
+			$param = $this->input->post("status");
+		}else{
+			$param = "proses";
+		}
 			$data = array(
 				'id_user' 	=> $this->input->post("inputBy"),
 				'isi_surat' => $this->input->post("isi_surat"),
-				'status' 	=> $this->input->post("status"),
+				'status' 	=> $param,
                 'waktu_input'   =>  date('Y-m-d H:i:s'),
 
 			);

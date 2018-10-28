@@ -16,7 +16,7 @@
 
 <body>
 <div class="container">
-	<table border="0">
+	<table border="1">
 		<tr>
 			<td width="20%"><img src="<?php echo base_url() ?>assets/img/logo_print.jpeg"></td>
 			<td class="txt-center" colspan="2">
@@ -97,7 +97,7 @@
 	</table>
 </div>
 <script>
-		window.print();
+		// window.print();
 	</script>
 </body>
 </html>

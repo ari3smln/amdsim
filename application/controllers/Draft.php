@@ -32,7 +32,12 @@ class draft extends CI_Controller {
 	public function edit(){
 		if(isset($_POST["submit"])){
 			$this->model_draft->edit();
-            $this->session->set_flashdata('sukses','Draft telah selesai di proses, Silahkan Kunjungi Halaman Surat Keluar');
+			if($this->input->post("status")!=""){
+				$param = 'Draft telah selesai di proses, Silahkan Kunjungi Halaman Surat Keluar';
+			}else{
+				$param = "Draft Berhasil disimpan";
+			}
+            $this->session->set_flashdata('sukses',$param);
 
 			redirect("draft");
 		}else{
